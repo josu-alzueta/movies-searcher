@@ -23,11 +23,15 @@ export const App: React.FC = () => {
           />
         </div>
 
-        <div className="movies-grid">
-          {movies.map((movie) => (
-            <Movie key={movie.id} title={movie.title} year={movie.year} />
-          ))}
-        </div>
+        {movies.length > 0 ? (
+          <div className="movies-grid">
+            {movies.map((movie) => (
+              <Movie key={movie.id} title={movie.title} year={movie.year} />
+            ))}
+          </div>
+        ) : (
+          <p>No se encontraron películas</p>
+        )}
       </main>
     </div>
   );

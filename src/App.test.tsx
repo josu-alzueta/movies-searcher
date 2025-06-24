@@ -111,6 +111,9 @@ describe("App Component", () => {
 
       await vi.waitFor(() => {
         expect(onSearch).toHaveBeenCalledWith("xyz123");
+        expect(
+          screen.queryByText("No se encontraron películas")
+        ).toBeInTheDocument();
         expect(screen.queryByText("The Matrix")).not.toBeInTheDocument();
         expect(
           screen.queryByText("The Shawshank Redemption")
