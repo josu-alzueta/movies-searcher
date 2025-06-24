@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-import moviesData from "@/data/movies.json";
 import { Movie } from "@/core/domain/models/Movie";
 import { moviesService } from "@/core/application/movies/moviesService";
 
 export const useMovies = () => {
-  const [movies, setMovies] = useState<Movie[]>(moviesData);
+  const [movies, setMovies] = useState<Movie[]>([]);
 
   useEffect(() => {
     const loadMovies = async () => {

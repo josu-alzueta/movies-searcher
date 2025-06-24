@@ -85,38 +85,3 @@
   color: #666;
   font-size: 0.9rem;
 }
-
-.like-button {
-  background: #f8f9fa;
-  border: 2px solid #dee2e6;
-  border-radius: 6px;
-  padding: 0.5rem 1rem;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-}
-
-.like-button:hover {
-  background: #e9ecef;
-  border-color: #adb5bd;
-}
-
-.like-button:focus {
-  outline: none;
-  border-color: #646cff;
-  box-shadow: 0 0 0 2px rgba(100, 108, 255, 0.2);
-}
-
-.placeholder {
-  text-align: center;
-  padding: 2rem;
-  background: #f9f9f9;
-  border-radius: 8px;
-  margin-top: 2rem;
-}
-
-.placeholder p {
-  margin: 0.5rem 0;
-  color: #666;
-}

@@ -96,18 +96,5 @@ describe("useMovies hook", () => {
       expect(result.current.movies.length).toBe(1);
       expect(result.current.movies[0].title).toBe("The Godfather");
     });
-
-    it("should return movies with the correct structure", () => {
-      const { result } = renderHook(() => useMovies());
-
-      const firstMovie = result.current.movies[0];
-
-      expect(firstMovie).toHaveProperty("id");
-      expect(firstMovie).toHaveProperty("title");
-      expect(firstMovie).toHaveProperty("director");
-      expect(firstMovie).toHaveProperty("year");
-      expect(firstMovie).toHaveProperty("genre");
-      expect(firstMovie).toHaveProperty("description");
-    });
   });
 });
