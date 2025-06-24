@@ -1,8 +1,8 @@
-export interface Movie {
+export type Movie = {
   id: number;
   title: string;
   director: string;
   year: number;
   genre: string;
   description: string;
-}
+};
