@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import { Movie as MovieType } from "@/types/movie";
 import "./App.css";
-import movies from "./data/movies.json";
-import { Movie as MovieType } from "./types/movie";
+import { useMovies } from "@/ui/hooks/useMovies.ts";
 
 type MovieProps = Pick<MovieType, "title" | "year">;
 
@@ -16,8 +16,9 @@ const Movie: React.FC<MovieProps> = ({ title, year }) => {
   );
 };
 
-const App: React.FC = () => {
+export const App: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
+  const { movies } = useMovies();
 
   return (
     <div className="App">
@@ -30,14 +31,18 @@ const App: React.FC = () => {
         <div className="search-container">
           <input
             type="text"
-            placeholder="Buscar películas por título..."
+            placeholder="Encuentra tu película favorita"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="search-input"
           />
         </div>
 
-        {/* Tu código aquí */}
+        <div className="movies-grid">
+          {movies.map((movie) => (
+            <Movie key={movie.id} title={movie.title} year={movie.year} />
+          ))}
+        </div>
 
         <div className="placeholder">
           <p>
@@ -53,5 +58,3 @@ const App: React.FC = () => {
     </div>
   );
 };
-
-export default App;
