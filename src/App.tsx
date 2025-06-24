@@ -28,17 +28,6 @@ export const App: React.FC = () => {
             <Movie key={movie.id} title={movie.title} year={movie.year} />
           ))}
         </div>
-
-        <div className="placeholder">
-          <p>
-            📝 <strong>Tu tarea:</strong> Crear un buscador que permita filtrar
-            películas por título
-          </p>
-          <p>
-            📊 <strong>Datos disponibles:</strong> {movies.length} películas en
-            el archivo movies.json
-          </p>
-        </div>
       </main>
     </div>
   );
