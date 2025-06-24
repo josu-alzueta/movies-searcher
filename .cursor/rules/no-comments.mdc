@@ -1,0 +1,27 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# No Comments Policy
+
+Code should be self-documenting through clear variable names, function names, and proper code organization. Do not use comments in any file.
+
+Key points:
+- No inline comments (//)
+- No block comments (/* */)
+- No JSDoc comments
+- No TODO comments
+- No commented-out code
+
+Instead:
+- Use descriptive variable and function names
+- Break complex logic into well-named functions
+- Use proper file and folder organization
+- Keep functions small and focused
+- Use TypeScript types for documentation
+
+This applies to all files including:
+- [src/App.tsx](mdc:src/App.tsx)
+- [src/ui/hooks/useMovies.ts/useMovies.ts](mdc:src/ui/hooks/useMovies.ts/useMovies.ts)
+- [src/ui/components/Movies/Movies.tsx](mdc:src/ui/components/Movies/Movies.tsx)

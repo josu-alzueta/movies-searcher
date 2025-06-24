@@ -1,0 +1,33 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Project Structure
+
+The project follows a feature-based organization with clear separation of concerns:
+
+Core Structure:
+- src/
+  - ui/
+    - components/ (Reusable UI components)
+    - hooks/ (Custom React hooks)
+  - types/ (TypeScript type definitions)
+  - data/ (Static data and mock files)
+
+Component Organization:
+- Each component should have its own directory
+- Use index.ts for clean exports
+- Tests go in __tests__ directory
+- One component per file
+
+Example Files:
+- [src/App.tsx](mdc:src/App.tsx) - Main application component
+- [src/ui/components/Movies/Movies.tsx](mdc:src/ui/components/Movies/Movies.tsx) - Movie component
+- [src/ui/hooks/useMovies.ts/useMovies.ts](mdc:src/ui/hooks/useMovies.ts/useMovies.ts) - Movies hook
+- [src/types/movie.ts](mdc:src/types/movie.ts) - Movie type definitions
+
+Imports:
+- Use @ alias for src directory
+- Group imports by: React, external libraries, internal modules
+- Use named exports over default exports

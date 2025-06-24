@@ -1,0 +1,36 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Testing Standards
+
+All tests should follow these standards:
+
+Test Organization:
+- Place tests in __tests__ directory next to the code being tested
+- Use .test.tsx extension for component tests
+- Use .test.ts extension for utility and hook tests
+
+Test Structure:
+- Use describe blocks for grouping related tests
+- Use clear it/test descriptions that explain the expected behavior
+- Follow AAA pattern: Arrange, Act, Assert
+- One assertion concept per test
+
+Testing Hooks:
+- Use renderHook from @testing-library/react
+- Wrap state updates in act()
+- Test initial state
+- Test all state updates
+- Test edge cases
+
+Example Tests:
+- [src/ui/hooks/useMovies.ts/__tests__/useMovies.test.tsx](mdc:src/ui/hooks/useMovies.ts/__tests__/useMovies.test.tsx)
+- [src/App.test.tsx](mdc:src/App.test.tsx)
+
+Assertions:
+- Use specific assertions over generic ones
+- Test both positive and negative cases
+- Test boundary conditions
+- Verify correct types in TypeScript tests
