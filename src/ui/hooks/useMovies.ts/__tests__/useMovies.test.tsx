@@ -4,7 +4,6 @@ import { useMovies } from "../useMovies";
 import { moviesService } from "@/core/application/movies/moviesService";
 import moviesData from "@/data/movies.json";
 
-// Mock del servicio de películas
 vi.mock("@/core/application/movies/moviesService", () => ({
   moviesService: {
     getMovies: vi.fn(),
@@ -15,7 +14,6 @@ vi.mock("@/core/application/movies/moviesService", () => ({
 describe("useMovies hook", () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    // Configuración por defecto de los mocks
     (moviesService.getMovies as any).mockResolvedValue(moviesData);
     (moviesService.searchMovies as any).mockImplementation((query: string) => {
       const searchTerm = query.toLowerCase();
@@ -30,7 +28,6 @@ describe("useMovies hook", () => {
   it("should return all movies initially", async () => {
     const { result } = renderHook(() => useMovies());
 
-    // Esperamos a que se resuelva la promesa inicial
     await vi.waitFor(() => {
       expect(result.current.movies).toEqual(moviesData);
       expect(result.current.movies.length).toBe(moviesData.length);
