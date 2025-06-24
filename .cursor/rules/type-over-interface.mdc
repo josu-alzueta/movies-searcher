@@ -1,0 +1,47 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Use Types Over Interfaces
+
+Always use TypeScript `type` instead of `interface` for better consistency and flexibility.
+
+Key points:
+- Use `type` for all type definitions
+- Use `type` for ports/contracts
+- Use `type` for domain models
+- Use `type` for DTOs and request/response types
+
+Example:
+```typescript
+// ✅ Correct
+type Movie = {
+  id: number;
+  title: string;
+};
+
+type MovieRepository = {
+  getMovies(): Promise<Movie[]>;
+};
+
+// ❌ Incorrect
+interface Movie {
+  id: number;
+  title: string;
+}
+
+interface MovieRepository {
+  getMovies(): Promise<Movie[]>;
+}
+```
+
+This applies to all TypeScript files including:
+- [src/core/domain/models/Movie.ts](mdc:src/core/domain/models/Movie.ts)
+- [src/core/ports/MovieRepository.ts](mdc:src/core/ports/MovieRepository.ts)
+
+Rationale:
+- Types are more flexible and support unions/intersections better
+- Types provide better error messages
+- Types are more consistent with functional programming principles
+- Types prevent accidental interface merging
