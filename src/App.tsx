@@ -1,6 +1,7 @@
 import React from "react";
 import { Movie } from "@/ui/components/Movies";
 import { SearchInput } from "@/ui/components/SearchInput";
+import { Header } from "@/ui/components/Header";
 import { useMovies } from "@/ui/hooks/useMovies.ts";
 import "./App.css";
 
@@ -9,10 +10,10 @@ export const App: React.FC = () => {
 
   return (
     <div className="App">
-      <header className="app-header">
-        <h1>🎬 Movie Search</h1>
-        <p className="subtitle">Encuentra tu película favorita</p>
-      </header>
+      <Header
+        title="🎬 Movie Search"
+        subtitle="Encuentra tu película favorita"
+      />
 
       <main className="main-content">
         <SearchInput onSearch={onSearch} />
