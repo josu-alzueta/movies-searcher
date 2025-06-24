@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import "./App.css";
 import movies from "./data/movies.json";
+import { Movie as MovieType } from "./types/movie";
 
-const Movie = ({ title, year }) => {
+type MovieProps = Pick<MovieType, "title" | "year">;
+
+const Movie: React.FC<MovieProps> = ({ title, year }) => {
   return (
     <div className="movie-card">
       <div className="movie-info">
@@ -13,8 +16,8 @@ const Movie = ({ title, year }) => {
   );
 };
 
-export const App = () => {
-  const [searchTerm, setSearchTerm] = useState("");
+const App: React.FC = () => {
+  const [searchTerm, setSearchTerm] = useState<string>("");
 
   return (
     <div className="App">
@@ -50,3 +53,5 @@ export const App = () => {
     </div>
   );
 };
+
+export default App;
