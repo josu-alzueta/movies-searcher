@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Movie } from "@/ui/components/Movies";
 import { useMovies } from "@/ui/hooks/useMovies.ts";
 import "./App.css";
 
 export const App: React.FC = () => {
-  const [searchTerm, setSearchTerm] = useState<string>("");
-  const { movies } = useMovies();
+  const { movies, onSearch } = useMovies();
 
   return (
     <div className="App">
@@ -19,8 +18,7 @@ export const App: React.FC = () => {
           <input
             type="text"
             placeholder="Encuentra tu película favorita"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            onChange={(e) => onSearch(e.target.value)}
             className="search-input"
           />
         </div>
