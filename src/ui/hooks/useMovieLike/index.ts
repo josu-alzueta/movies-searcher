@@ -1,0 +1,1 @@
+export { useMovieLike } from "./useMovieLike";

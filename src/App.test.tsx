@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { App } from "./App";
-import * as useMoviesModule from "@/ui/hooks/useMovies.ts";
+import * as useMoviesModule from "@/ui/hooks/useMovies";
 import moviesData from "@/data/movies.json";
 
 // Mock del hook useMovies
