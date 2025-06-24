@@ -1,20 +1,7 @@
 import React, { useState } from "react";
-import { Movie as MovieType } from "@/types/movie";
-import "./App.css";
+import { Movie } from "@/ui/components/Movies";
 import { useMovies } from "@/ui/hooks/useMovies.ts";
-
-type MovieProps = Pick<MovieType, "title" | "year">;
-
-const Movie: React.FC<MovieProps> = ({ title, year }) => {
-  return (
-    <div className="movie-card">
-      <div className="movie-info">
-        <h3 className="movie-title">{title}</h3>
-        <p className="movie-year">{year}</p>
-      </div>
-    </div>
-  );
-};
+import "./App.css";
 
 export const App: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
