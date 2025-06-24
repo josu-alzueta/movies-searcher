@@ -1,5 +1,6 @@
 import React from "react";
 import { Movie } from "@/ui/components/Movies";
+import { SearchInput } from "@/ui/components/SearchInput";
 import { useMovies } from "@/ui/hooks/useMovies.ts";
 import "./App.css";
 
@@ -14,24 +15,17 @@ export const App: React.FC = () => {
       </header>
 
       <main className="main-content">
-        <div className="search-container">
-          <input
-            type="text"
-            placeholder="Encuentra tu película favorita"
-            onChange={(e) => onSearch(e.target.value)}
-            className="search-input"
-          />
-        </div>
+        <SearchInput onSearch={onSearch} />
 
-        {movies.length > 0 ? (
-          <div className="movies-grid">
-            {movies.map((movie) => (
+        <div className="movies-grid">
+          {movies.length > 0 ? (
+            movies.map((movie) => (
               <Movie key={movie.id} title={movie.title} year={movie.year} />
-            ))}
-          </div>
-        ) : (
-          <p>No se encontraron películas</p>
-        )}
+            ))
+          ) : (
+            <p>No se encontraron películas</p>
+          )}
+        </div>
       </main>
     </div>
   );
